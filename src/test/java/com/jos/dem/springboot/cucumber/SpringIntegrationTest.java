@@ -1,23 +1,24 @@
 package com.jos.dem.springboot.cucumber;
 
-import java.util.List;
-
 import com.jos.dem.springboot.cucumber.model.Person;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.reactive.function.client.WebClient;
+
+import reactor.core.publisher.Flux;
 
 @ContextConfiguration(classes = DemoApplication.class)
 @WebAppConfiguration
 public class SpringIntegrationTest {
 
   @Autowired
-  private RestTemplate restTemplate;
+  private WebClient webClient;
 
-  List<Person> executeGet(String url) throws Exception {
-    return restTemplate.getForObject(url, List.class);
+  Flux<Person> executeGet() throws Exception {
+    return webClient.get().uri("").retrieve()
+    .bodyToFlux(Person.class);
   }
   
 }
