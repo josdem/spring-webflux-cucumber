@@ -24,7 +24,7 @@ public class WebConfig {
       .route(GET("/persons"),
       request -> ServerResponse.ok().body(personService.getAll(), Person.class))
       .andRoute(GET("/persons/{id}"), 
-      request -> ServerResponse.ok().body(personService.getById(request.pathVariable("id")), Person.class));
+      request -> ServerResponse.ok().body(personService.getByNickname(request.pathVariable("id")), Person.class));
   }
 
 }
