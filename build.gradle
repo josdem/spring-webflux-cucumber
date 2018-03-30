@@ -23,7 +23,6 @@ repositories {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-data-mongodb-reactive')
 	compile('org.springframework.boot:spring-boot-starter-webflux')
 	compileOnly('org.projectlombok:lombok')
 	testCompile('info.cukes:cucumber-java:1.2.5')
