@@ -23,8 +23,8 @@ public class WebConfig {
     return RouterFunctions
       .route(GET("/persons"),
       request -> ServerResponse.ok().body(personService.getAll(), Person.class))
-      .andRoute(GET("/persons/{id}"), 
-      request -> ServerResponse.ok().body(personService.getByNickname(request.pathVariable("id")), Person.class));
+      .andRoute(GET("/persons/{nickname}"), 
+      request -> ServerResponse.ok().body(personService.getByNickname(request.pathVariable("nickname")), Person.class));
   }
 
 }

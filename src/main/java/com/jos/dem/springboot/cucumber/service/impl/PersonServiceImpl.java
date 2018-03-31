@@ -16,7 +16,7 @@ public class PersonServiceImpl implements PersonService {
   public Flux<Person> getAll(){
     return Flux.fromIterable(
       Arrays.asList(
-        new Person("josdem", "joseluis.delacruz@gmail.com"), 
+        new Person("josdem", "josdem@email.com"), 
         new Person("tgrip", "tgrip@email.com"), 
         new Person("edzero", "edzero@email.com"),
         new Person("skuarch", "skuarch@email.com"),
