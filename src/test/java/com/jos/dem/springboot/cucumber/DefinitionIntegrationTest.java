@@ -23,7 +23,7 @@ public class DefinitionIntegrationTest extends SpringIntegrationTest {
   @Then("^the client receives persons$")
   public void shouldGetPersons() throws Exception {      
     assertEquals(5 , persons.size());
-    assertTrue(persons.contains(new Person("josdem", "josdem@email.com")));
+    assertTrue(persons.contains(new Person("josdem", "joseluis.delacruz@gmail.com")));
     assertTrue(persons.contains(new Person("tgrip", "tgrip@email.com")));
     assertTrue(persons.contains(new Person("edzero", "edzero@email.com")));
     assertTrue(persons.contains(new Person("skuarch", "skuarch@email.com")));
