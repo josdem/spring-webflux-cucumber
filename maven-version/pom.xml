@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo</name>
+	<name>spring-boot-cucumber</name>
 	<description>Shows how to integrate Cucumber to your Spring Boot application</description>
 
 	<parent>
