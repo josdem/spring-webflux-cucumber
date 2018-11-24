@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.jos.dem.webflux.model.Person;
-import com.jos.dem.webflux.repository.PersonRepository;
+import com.jos.dem.springboot.cucumber.model.Person;
+import com.jos.dem.springboot.cucumber.service.PersonService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,18 +20,18 @@ public class PersonController {
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
   @Autowired
-  private PersonRepository personRepository;
+  private PersonService personService;
 
   @GetMapping("/persons")
   public Flux<Person> findAll(){
     log.info("Calling find persons");
-    return personRepository.findAll();
+    return personService.getAll();
   }
 
   @GetMapping("/persons/{nickname}")
   public Mono<Person> findById(@PathVariable String nickname){
     log.info("Calling find person by nickname: " + nickname);
-    return personRepository.findByNickname(nickname);
+    return personService.getByNickname(nickname);
   }
 
 }
