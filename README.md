@@ -10,16 +10,16 @@ This project shows how to integrate Cucumber to your Spring Boot application usi
 gradle bootRun
 ```
 
-#### To run the project with Maven
-
-```bash
-mvn spring-boot:run
-```
-
 #### To test the project with Gradle
 
 ```bash
 gradle test
+```
+
+#### To run the project with Maven
+
+```bash
+mvn spring-boot:run
 ```
 
 #### To test the project with Maven
@@ -28,7 +28,6 @@ gradle test
 mvn test
 ```
 
-
 #### Read this as reference
 
-http://josdem.io/techtalk/spring/spring_boot_cucumber/
+https://josdem.io/techtalk/spring/spring_boot_cucumber/
