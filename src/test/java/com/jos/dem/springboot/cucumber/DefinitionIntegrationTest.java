@@ -27,7 +27,7 @@ public class DefinitionIntegrationTest extends SpringIntegrationTest {
     log.info("Before any test execution");
   }
 
-  @Then("^the client receives persons$")
+  @Then("the client receives persons")
   public void shouldGetPersons() throws Exception {
     List<Person> persons = executeGet().collectList().block();
 
