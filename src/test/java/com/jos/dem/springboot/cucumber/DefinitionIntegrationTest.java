@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+import java.util.Date;
 import java.util.List;
 
 import reactor.core.publisher.Flux;
@@ -13,6 +13,7 @@ import com.jos.dem.springboot.cucumber.model.Person;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
 
 import org.slf4j.Logger;
@@ -20,6 +21,7 @@ import org.slf4j.LoggerFactory;
 
 public class DefinitionIntegrationTest extends SpringIntegrationTest {
 
+  private List<Person> persons;
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
   @Before
@@ -27,9 +29,15 @@ public class DefinitionIntegrationTest extends SpringIntegrationTest {
     log.info("Before any test execution");
   }
 
-  @Then("the client receives persons")
+  @When("I request all persons")
+  public void shouldGetAllPersons() throws Exception {
+    log.info("Running: I request all persons at " + new Date());
+    persons = executeGet().collectList().block();
+  }
+
+  @Then("I validate all persons")
   public void shouldGetPersons() throws Exception {
-    List<Person> persons = executeGet().collectList().block();
+    log.info("Running: I validate all persons at " + new Date());
 
     assertEquals(5 , persons.size());
     assertAll("person",
