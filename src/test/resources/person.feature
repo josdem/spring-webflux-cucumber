@@ -1,3 +1,4 @@
-Feature: Persons can be retrieved
-  Scenario: client makes call to GET persons
-    Then the client receives persons
+Feature: We can retrieve person data
+  Scenario: We can retrieve all persons
+    When I request all persons
+    Then I validate all persons
