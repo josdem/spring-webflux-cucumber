@@ -17,8 +17,17 @@ public class PersonIntegrationTest {
   private WebClient webClient;
 
   Flux<Person> getPersons() throws Exception {
-    return webClient.get().uri("").retrieve()
+    return webClient.get()
+      .uri("/persons")
+      .retrieve()
     .bodyToFlux(Person.class);
+  }
+
+  Mono<Person> getPerson(String nickname) throws Exception {
+    return webClient.get()
+      .uri("/persons/" + nickname)
+      .retrieve()
+    .bodyToMono(Person.class);
   }
 
 }

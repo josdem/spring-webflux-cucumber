@@ -14,7 +14,7 @@ public class DemoApplication {
 
   @Bean
   WebClient getWebClient() {
-    return WebClient.create("http://localhost:8080/persons");
+    return WebClient.create("http://localhost:8080");
   }
 
 }
