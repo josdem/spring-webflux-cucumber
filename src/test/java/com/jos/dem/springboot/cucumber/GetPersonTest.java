@@ -31,7 +31,7 @@ public class GetPersonTest extends PersonIntegrationTest {
   @When("I request person by nickname {word}")
   public void shouldGetPersonByNickname(String password) throws Exception {
     log.info("Running: I request person by nickname at " + new Date());
-    person = executeGet().collectList().block();
+    person = getPerson().block();
   }
 
   @Then("I validate person data")

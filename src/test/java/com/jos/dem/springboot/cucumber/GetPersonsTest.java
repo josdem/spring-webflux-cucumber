@@ -30,13 +30,13 @@ public class GetPersonsTest extends SpringIntegrationTest {
   }
 
   @When("I request all persons")
-  public void shouldGetAllPersons() throws Exception {
+  public void shouldGetPersons() throws Exception {
     log.info("Running: I request all persons at " + new Date());
-    persons = executeGet().collectList().block();
+    persons = getPersons().collectList().block();
   }
 
   @Then("I validate all persons")
-  public void shouldGetPersons() throws Exception {
+  public void shouldValidatePersons() throws Exception {
     log.info("Running: I validate all persons at " + new Date());
 
     assertEquals(5 , persons.size());
