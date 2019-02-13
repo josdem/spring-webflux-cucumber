@@ -6,6 +6,7 @@ import reactor.core.publisher.Flux;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jos.dem.springboot.cucumber.model.Person;
@@ -15,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
+@RequestMapping("/persons")
 public class PersonController {
 
   private Logger log = LoggerFactory.getLogger(this.getClass());
@@ -22,13 +24,13 @@ public class PersonController {
   @Autowired
   private PersonService personService;
 
-  @GetMapping("/persons")
+  @GetMapping("/")
   public Flux<Person> findAll(){
     log.info("Calling find persons");
     return personService.getAll();
   }
 
-  @GetMapping("/persons/{nickname}")
+  @GetMapping("/{nickname}")
   public Mono<Person> findById(@PathVariable String nickname){
     log.info("Calling find person by nickname: " + nickname);
     return personService.getByNickname(nickname);

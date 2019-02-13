@@ -16,7 +16,7 @@ public class PersonIntegrationTest {
   @Autowired
   private WebClient webClient;
 
-  Flux<Person> executeGet() throws Exception {
+  Flux<Person> getPersons() throws Exception {
     return webClient.get().uri("").retrieve()
     .bodyToFlux(Person.class);
   }
