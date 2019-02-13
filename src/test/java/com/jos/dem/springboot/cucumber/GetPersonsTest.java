@@ -19,7 +19,7 @@ import cucumber.api.java.en.Then;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class DefinitionIntegrationTest extends SpringIntegrationTest {
+public class GetPersonsTest extends SpringIntegrationTest {
 
   private List<Person> persons;
   private Logger log = LoggerFactory.getLogger(this.getClass());

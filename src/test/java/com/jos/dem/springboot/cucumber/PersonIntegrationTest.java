@@ -11,7 +11,7 @@ import reactor.core.publisher.Flux;
 
 @ContextConfiguration(classes = DemoApplication.class)
 @WebAppConfiguration
-public class SpringIntegrationTest {
+public class PersonIntegrationTest {
 
   @Autowired
   private WebClient webClient;
@@ -20,5 +20,5 @@ public class SpringIntegrationTest {
     return webClient.get().uri("").retrieve()
     .bodyToFlux(Person.class);
   }
-  
+
 }
