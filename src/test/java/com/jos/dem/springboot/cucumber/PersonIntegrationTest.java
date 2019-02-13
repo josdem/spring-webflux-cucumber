@@ -1,13 +1,14 @@
 package com.jos.dem.springboot.cucumber;
 
-import com.jos.dem.springboot.cucumber.model.Person;
+import reactor.core.publisher.Mono;
+import reactor.core.publisher.Flux;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import reactor.core.publisher.Flux;
+import com.jos.dem.springboot.cucumber.model.Person;
 
 @ContextConfiguration(classes = DemoApplication.class)
 @WebAppConfiguration
@@ -18,7 +19,7 @@ public class PersonIntegrationTest {
 
   Flux<Person> getPersons() throws Exception {
     return webClient.get()
-      .uri("/persons")
+      .uri("/persons/")
       .retrieve()
     .bodyToFlux(Person.class);
   }
