@@ -28,7 +28,7 @@ public class GetPersonTest extends PersonIntegrationTest {
     log.info("Before any test execution");
   }
 
-  @When("^I request person by nickname \"^\\s*\"$")
+  @When("^I request person by nickname \"([^\"]*)\"$")
   public void shouldGetPersonByNickname(String nickname) throws Exception {
     log.info("Running: I request person by nickname at " + new Date());
     person = getPerson(nickname).block();
