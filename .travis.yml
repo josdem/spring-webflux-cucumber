@@ -4,4 +4,4 @@ before_install:
   - chmod +x gradlew
 script:
   - ./gradlew bootRun &
-  - ./gradlew test
+  - ./gradlew test sonarqube
