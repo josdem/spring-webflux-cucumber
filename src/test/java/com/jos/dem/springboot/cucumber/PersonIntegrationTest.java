@@ -23,7 +23,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.jos.dem.springboot.cucumber.model.Person;
 
-@ContextConfiguration(classes = DemoApplication.class)
+@ContextConfiguration(classes = CucumberApplication.class)
 @WebAppConfiguration
 public class PersonIntegrationTest {
 
