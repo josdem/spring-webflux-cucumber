@@ -45,7 +45,7 @@ public class PersonController {
 
   @GetMapping("/{nickname}")
   public Mono<Person> findById(@PathVariable String nickname){
-    log.info("Calling find person by nickname: " + nickname);
+    log.info("Calling find person by nickname: {}", nickname);
     return personService.getByNickname(nickname);
   }
 
