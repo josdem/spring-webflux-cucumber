@@ -1,6 +1,8 @@
 Spring Boot Cucumber
 ----------------------------
 
+[![Quality Gate Status](https://sonar.josdem.io/api/project_badges/measure?project=com.jos.dem.springboot.cucumber%3Aspring-boot-cucumber&metric=alert_status)](https://sonar.josdem.io/dashboard?id=com.jos.dem.springboot.cucumber%3Aspring-boot-cucumber)
+
 This project shows how to integrate Cucumber to your Spring Boot application using either Gradle or Maven
 
 
