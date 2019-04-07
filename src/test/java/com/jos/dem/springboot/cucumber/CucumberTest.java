@@ -13,10 +13,24 @@
 
 package com.jos.dem.springboot.cucumber;
 
+import java.io.File;
+
 import org.junit.runner.RunWith;
+import org.junit.AfterClass;
+
+import com.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources", format = {"pretty", "html:target/report.html"})
-public class CucumberTest {}
+@CucumberOptions(features = "src/test/resources",
+                 format = "pretty",
+                 plugin = "com.cucumber.listener.ExtentCucumberFormatter:target/reports/report.html")
+public class CucumberTest {
+
+  @AfterClass
+  public static void teardown() {
+    Reporter.loadXMLConfig(new File("src/test/resources/config/extent-config.xml"));
+  }
+
+}
