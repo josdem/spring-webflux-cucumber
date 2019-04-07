@@ -81,6 +81,16 @@
       <version>${junit.jupiter.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.vimalselvam</groupId>
+      <artifactId>cucumber-extentsreport</artifactId>
+      <version>3.1.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>3.1.1</version>
+    </dependency>
   </dependencies>
 
   <build>
