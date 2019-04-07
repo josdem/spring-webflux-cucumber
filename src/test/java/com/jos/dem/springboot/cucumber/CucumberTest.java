@@ -15,10 +15,10 @@ package com.jos.dem.springboot.cucumber;
 
 import java.io.File;
 
+import com.vimalselvam.cucumber.listener.Reporter;
+
 import org.junit.runner.RunWith;
 import org.junit.AfterClass;
-
-import com.cucumber.listener.Reporter;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -26,7 +26,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources",
                  format = "pretty",
-                 plugin = "com.cucumber.listener.ExtentCucumberFormatter:target/reports/report.html")
+                 plugin = "com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:target/reports/report.html")
 public class CucumberTest {
 
   @AfterClass

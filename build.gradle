@@ -35,7 +35,7 @@ dependencies {
   annotationProcessor 'org.projectlombok:lombok'
   implementation('org.apache.commons:commons-lang3:3.8.1')
   testImplementation('com.aventstack:extentreports:3.1.1')
-  testImplementation('com.vimalselvam:cucumber-extentsreport:3.1.0')
+  testImplementation('com.vimalselvam:cucumber-extentsreport:3.1.1')
   testImplementation("info.cukes:cucumber-java:$cucumberVersion")
   testImplementation("info.cukes:cucumber-junit:$cucumberVersion")
   testImplementation("info.cukes:cucumber-spring:$cucumberVersion")
