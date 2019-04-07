@@ -33,6 +33,7 @@ dependencies {
   implementation('org.springframework.boot:spring-boot-starter-tomcat')
   compileOnly('org.projectlombok:lombok')
   annotationProcessor 'org.projectlombok:lombok'
+  compile('org.apache.commons:commons-lang3:3.8.1')
   testImplementation("info.cukes:cucumber-java:$cucumberVersion")
   testImplementation("info.cukes:cucumber-junit:$cucumberVersion")
   testImplementation("info.cukes:cucumber-spring:$cucumberVersion")
