@@ -1,6 +1,6 @@
 buildscript {
   ext {
-    springBootVersion = '2.1.2.RELEASE'
+    springBootVersion = '2.1.4.RELEASE'
     cucumberVersion = '1.2.5'
     junitVersion = '5.4.0'
   }
