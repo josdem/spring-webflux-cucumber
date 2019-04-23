@@ -1,20 +1,13 @@
-buildscript {
-  ext {
-    springBootVersion = '2.1.4.RELEASE'
-    cucumberVersion = '1.2.5'
-    junitVersion = '5.4.0'
-  }
-  repositories {
-    mavenCentral()
-  }
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-  }
+plugins {
+  id 'org.springframework.boot' version '2.1.4.RELEASE'
+  id "org.sonarqube" version "2.7"
+  id 'java'
 }
 
-plugins {
-  id "org.sonarqube" version "2.7"
-}
+def springBootVersion = '2.1.4.RELEASE'
+def junitJupiterVersion = '5.4.0'
+def cucumberVersion = '1.2.5'
+def extentReportsVersion = '3.1.1'
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
@@ -34,13 +27,13 @@ dependencies {
   compileOnly('org.projectlombok:lombok')
   annotationProcessor 'org.projectlombok:lombok'
   implementation('org.apache.commons:commons-lang3:3.8.1')
-  testImplementation('com.aventstack:extentreports:3.1.1')
-  testImplementation('com.vimalselvam:cucumber-extentsreport:3.1.1')
+  testImplementation("com.aventstack:extentreports:$extentReportsVersion")
+  testImplementation("com.vimalselvam:cucumber-extentsreport:$extentReportsVersion")
   testImplementation("info.cukes:cucumber-java:$cucumberVersion")
   testImplementation("info.cukes:cucumber-junit:$cucumberVersion")
   testImplementation("info.cukes:cucumber-spring:$cucumberVersion")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-  testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+  testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
   testImplementation('org.springframework.boot:spring-boot-starter-test')
   testImplementation('io.projectreactor:reactor-test')
 }
