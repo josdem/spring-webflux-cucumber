@@ -1,13 +1,14 @@
 plugins {
-  id 'org.springframework.boot' version '2.1.4.RELEASE'
+  id 'org.springframework.boot' version '2.1.5.RELEASE'
   id "org.sonarqube" version "2.7"
   id 'java'
 }
 
-def springBootVersion = '2.1.4.RELEASE'
-def junitJupiterVersion = '5.4.0'
-def cucumberVersion = '1.2.5'
-def extentReportsVersion = '3.1.1'
+ext {
+  junitJupiterVersion = '5.4.2'
+  cucumberVersion = '1.2.5'
+  extentReportsVersion = '3.1.1'
+}
 
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
