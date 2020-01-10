@@ -16,7 +16,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.jos.dem.springboot.cucumber'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 11
+sourceCompatibility = 12
 
 configurations {
   compileOnly {
