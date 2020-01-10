@@ -1,12 +1,12 @@
 plugins {
-  id 'org.springframework.boot' version '2.1.5.RELEASE'
+  id 'org.springframework.boot' version '2.2.2.RELEASE'
+  id 'io.spring.dependency-management' version '1.0.8.RELEASE'
   id "org.sonarqube" version "2.7"
   id 'java'
 }
 
 ext {
-  junitJupiterVersion = '5.4.2'
-  cucumberVersion = '1.2.5'
+  cucumberVersion = '1.2.6'
   extentReportsVersion = '3.1.1'
 }
 
@@ -39,9 +39,9 @@ dependencies {
   testImplementation("info.cukes:cucumber-java:$cucumberVersion")
   testImplementation("info.cukes:cucumber-junit:$cucumberVersion")
   testImplementation("info.cukes:cucumber-spring:$cucumberVersion")
-  testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
-  testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
-  testImplementation('org.springframework.boot:spring-boot-starter-test')
+  testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+  }
   testImplementation('io.projectreactor:reactor-test')
 }
 
