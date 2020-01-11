@@ -14,6 +14,7 @@
 package com.jos.dem.springboot.cucumber;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import com.jos.dem.springboot.cucumber.model.Person;
 import cucumber.api.java.After;
