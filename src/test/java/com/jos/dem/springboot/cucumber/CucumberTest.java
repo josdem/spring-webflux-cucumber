@@ -13,15 +13,12 @@
 
 package com.jos.dem.springboot.cucumber;
 
-import java.io.File;
-
 import com.vimalselvam.cucumber.listener.Reporter;
-
-import org.junit.runner.RunWith;
-import org.junit.AfterClass;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
+import java.io.File;
+import org.junit.AfterClass;
+import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources",

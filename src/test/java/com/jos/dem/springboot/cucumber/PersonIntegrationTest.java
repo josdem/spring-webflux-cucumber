@@ -13,15 +13,13 @@
 
 package com.jos.dem.springboot.cucumber;
 
-import reactor.core.publisher.Mono;
-import reactor.core.publisher.Flux;
-
+import com.jos.dem.springboot.cucumber.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.reactive.function.client.WebClient;
-
-import com.jos.dem.springboot.cucumber.model.Person;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @ContextConfiguration(classes = CucumberApplication.class)
 @WebAppConfiguration

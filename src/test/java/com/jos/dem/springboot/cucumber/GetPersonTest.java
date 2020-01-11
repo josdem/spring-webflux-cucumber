@@ -14,20 +14,13 @@
 package com.jos.dem.springboot.cucumber;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.Date;
-
-import reactor.core.publisher.Flux;
 
 import com.jos.dem.springboot.cucumber.model.Person;
-
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.When;
 import cucumber.api.java.en.Then;
-
+import cucumber.api.java.en.When;
+import java.util.Date;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,8 +45,8 @@ public class GetPersonTest extends PersonIntegrationTest {
     log.info("Running: I validate person data at " + new Date());
 
     assertAll("person",
-      () -> assertEquals("josdem", person.getNickname()),
-      () -> assertEquals("joseluis.delacruz@gmail.com", person.getEmail())
+        () -> assertEquals("josdem", person.getNickname()),
+        () -> assertEquals("joseluis.delacruz@gmail.com", person.getEmail())
     );
   }
 
